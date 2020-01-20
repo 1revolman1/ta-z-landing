@@ -82,6 +82,7 @@ header {
 }
 
 .content .sticky {
+  z-index: 1;
   width: 474px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -250,6 +251,9 @@ footer .footer {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-transition: padding 0.4s linear;
+  -o-transition: padding 0.4s linear;
+  transition: padding 0.4s linear;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -261,6 +265,12 @@ footer .footer {
 }
 
 footer .footer .text {
+  z-index: 0;
+  -webkit-transition: -webkit-transform 0.7s linear;
+  transition: -webkit-transform 0.7s linear;
+  -o-transition: transform 0.7s linear;
+  transition: transform 0.7s linear;
+  transition: transform 0.7s linear, -webkit-transform 0.7s linear;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -302,6 +312,13 @@ footer .footer .logo::after {
   width: 5px;
   right: 1%;
   background: yellow;
+}
+
+footer .footer .icon {
+  position: relative;
+  -webkit-transition: left 0.1s linear;
+  -o-transition: left 0.1s linear;
+  transition: left 0.1s linear;
 }
 
 @font-face {
