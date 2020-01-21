@@ -1,5 +1,8 @@
 @import "help/vars_and_mixins";
 
+$smalDekstop: 1024px;
+$bigMobile: 425px;
+
 header {
   background: url("../img/Group 3.svg");
   background-size: cover;
@@ -9,6 +12,14 @@ header {
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
+  @media screen and (max-width: $smalDekstop) {
+    max-width: 768px;
+    padding: 85px 85px;
+  }
+  @media screen and (max-width: $bigMobile) {
+    max-width: $bigMobile;
+    padding: 0 20px;
+  }
 }
 .header {
   padding: 85px 125px 130px;
@@ -36,13 +47,23 @@ header {
       opacity: 0.7;
     }
   }
+  @media screen and (max-width: $smalDekstop) {
+    padding: 40px 80px 40px;
+  }
+  @media screen and (max-width: $bigMobile) {
+    padding: 40px 20px !important;
+    height: auto;
+    min-height: 450px;
+  }
 }
 .content {
   padding-top: 30px;
   position: relative;
   display: flex;
   .block-with-text {
-    width: 673px;
+    // width: 673px;
+    // width: 55%;
+    width: 50%;
     h3 {
       font-family: "PromptBold", sans-serif;
       font-style: normal;
@@ -58,23 +79,24 @@ header {
       line-height: 27px;
       margin-bottom: 65px;
     }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @media screen and (max-width: $smalDekstop) {
+      width: inherit;
+    }
   }
   .sticky {
-    // display: none;
     z-index: 1;
-    width: 474px;
-    // height: 600px;
+    width: 33%;
     height: fit-content;
-    //   height: 769px;
-    //   background: yellow;
     background: #ffe900;
     box-shadow: 0px 32px 48px rgba(0, 0, 0, 0.06);
     position: fixed;
     margin: 0 auto;
     padding: 0 42px;
-    // top: 22%;
     bottom: 0;
-    //   right: 10%;
     right: 8%;
     .head {
       display: flex;
@@ -127,6 +149,7 @@ header {
         }
       }
       input[type="submit"] {
+        cursor: pointer;
         height: 58px;
         width: 100%;
         background: black;
@@ -151,6 +174,20 @@ header {
         color: black;
       }
     }
+    @media screen and (max-width: $smalDekstop) {
+      width: 100%;
+      position: initial;
+      top: initial;
+      margin: 0;
+      right: 0;
+    }
+  }
+  @media screen and (max-width: $smalDekstop) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $bigMobile) {
+    margin-bottom: 100px;
+    margin-top: 50px;
   }
 }
 main {
@@ -174,7 +211,8 @@ footer {
     align-items: center;
     .text {
       z-index: 0;
-      transition: transform 0.7s linear;
+      transition: margin 1s linear, transform 0.7s linear;
+      // transition: transform 0.7s linear;
       display: flex;
       p {
         font-family: "PromptRegular", sans-serif;
@@ -184,15 +222,30 @@ footer {
         line-height: 23px;
         color: black;
         a {
+          text-decoration: none;
           color: inherit;
         }
       }
       .text-1 {
         max-width: 235px;
-        margin-right: 54px;
+        // margin-right: 54px
+        margin-right: 13%;
+        @media screen and (max-width: $bigMobile) {
+          margin-right: 0;
+          max-width: 180px;
+        }
       }
       .text-2 {
         max-width: 180px;
+      }
+      .text-1,
+      .text-2 {
+        width: 100%;
+      }
+      @media screen and (max-width: $bigMobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
     .logo {
@@ -212,5 +265,20 @@ footer {
       position: relative;
       transition: left 0.1s linear;
     }
+    @media screen and (max-width: $smalDekstop) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      max-width: 768px;
+      padding: 0 85px;
+    }
+    @media screen and (max-width: $bigMobile) {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 23px;
+    }
+  }
+  @media screen and (max-width: $bigMobile) {
+    height: auto;
   }
 }

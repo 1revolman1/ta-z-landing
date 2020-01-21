@@ -61,7 +61,7 @@ header {
 }
 
 .content .block-with-text {
-  width: 673px;
+  width: 50%;
 }
 
 .content .block-with-text h3 {
@@ -81,9 +81,14 @@ header {
   margin-bottom: 65px;
 }
 
+.content .block-with-text img {
+  width: 100%;
+  height: auto;
+}
+
 .content .sticky {
   z-index: 1;
-  width: 474px;
+  width: 33%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -208,6 +213,7 @@ header {
 }
 
 .content .sticky .inputs-form input[type="submit"] {
+  cursor: pointer;
   height: 58px;
   width: 100%;
   background: black;
@@ -266,11 +272,11 @@ footer .footer {
 
 footer .footer .text {
   z-index: 0;
-  -webkit-transition: -webkit-transform 0.7s linear;
-  transition: -webkit-transform 0.7s linear;
-  -o-transition: transform 0.7s linear;
-  transition: transform 0.7s linear;
-  transition: transform 0.7s linear, -webkit-transform 0.7s linear;
+  -webkit-transition: margin 1s linear, -webkit-transform 0.7s linear;
+  transition: margin 1s linear, -webkit-transform 0.7s linear;
+  -o-transition: margin 1s linear, transform 0.7s linear;
+  transition: margin 1s linear, transform 0.7s linear;
+  transition: margin 1s linear, transform 0.7s linear, -webkit-transform 0.7s linear;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -287,16 +293,22 @@ footer .footer .text p {
 }
 
 footer .footer .text p a {
+  text-decoration: none;
   color: inherit;
 }
 
 footer .footer .text .text-1 {
   max-width: 235px;
-  margin-right: 54px;
+  margin-right: 13%;
 }
 
 footer .footer .text .text-2 {
   max-width: 180px;
+}
+
+footer .footer .text .text-1,
+footer .footer .text .text-2 {
+  width: 100%;
 }
 
 footer .footer .logo {
@@ -641,5 +653,109 @@ template {
 
 [hidden] {
   display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 768px;
+    padding: 85px 85px;
+  }
+
+  .header {
+    padding: 40px 80px 40px;
+  }
+
+  .content .block-with-text {
+    width: inherit;
+  }
+
+  .content .sticky {
+    width: 100%;
+    position: initial;
+    top: initial;
+    margin: 0;
+    right: 0;
+  }
+
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  footer .footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    max-width: 768px;
+    padding: 0 85px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .wrapper {
+    max-width: 425px;
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 40px 20px !important;
+    height: auto;
+    min-height: 450px;
+  }
+
+  .content {
+    margin-bottom: 100px;
+    margin-top: 50px;
+  }
+
+  footer .footer .text .text-1 {
+    margin-right: 0;
+    max-width: 180px;
+  }
+
+  footer .footer .text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  footer .footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 10px 23px;
+  }
+
+  footer {
+    height: auto;
+  }
 }
 /*# sourceMappingURL=style.min.css.map */
